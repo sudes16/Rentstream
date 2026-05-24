@@ -1,9 +1,9 @@
-package com.example.data.repository
+package com.rentstream.app.data.repository
 
-import com.example.data.local.RentDao
-import com.example.data.model.Lease
-import com.example.data.model.Payment
-import com.example.data.model.TenantMessage
+import com.rentstream.app.data.local.RentDao
+import com.rentstream.app.data.model.Lease
+import com.rentstream.app.data.model.Payment
+import com.rentstream.app.data.model.TenantMessage
 import kotlinx.coroutines.flow.Flow
 
 class RentRepository(private val rentDao: RentDao) {

@@ -1,17 +1,18 @@
-package com.example.ui.viewmodel
+package com.rentstream.app.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.data.local.RentDatabase
-import com.example.data.model.Lease
-import com.example.data.model.Payment
-import com.example.data.model.TenantMessage
-import com.example.data.repository.RentRepository
+import com.rentstream.app.data.local.RentDatabase
+import com.rentstream.app.data.model.Lease
+import com.rentstream.app.data.model.Payment
+import com.rentstream.app.data.model.TenantMessage
+import com.rentstream.app.data.repository.RentRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -60,10 +61,9 @@ class RentViewModel(application: Application) : AndroidViewModel(application) {
 
         // Pre-populate if db is empty
         viewModelScope.launch {
-            repository.allLeases.collect { list ->
-                if (list.isEmpty()) {
-                    prepopulateDatabase()
-                }
+            val list = repository.allLeases.first()
+            if (list.isEmpty()) {
+                prepopulateDatabase()
             }
         }
     }

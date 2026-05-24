@@ -1,12 +1,12 @@
-package com.example.data.local
+package com.rentstream.app.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.data.model.Lease
-import com.example.data.model.Payment
-import com.example.data.model.TenantMessage
+import com.rentstream.app.data.model.Lease
+import com.rentstream.app.data.model.Payment
+import com.rentstream.app.data.model.TenantMessage
 
 @Database(
     entities = [Lease::class, Payment::class, TenantMessage::class],

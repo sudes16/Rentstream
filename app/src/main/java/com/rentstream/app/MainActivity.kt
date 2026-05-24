@@ -1,5 +1,5 @@
-package com.example
-
+package com.rentstream.app
+ 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -35,11 +35,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.data.model.Lease
-import com.example.data.model.Payment
-import com.example.data.model.TenantMessage
-import com.example.ui.theme.*
-import com.example.ui.viewmodel.RentViewModel
+import com.rentstream.app.data.model.Lease
+import com.rentstream.app.data.model.Payment
+import com.rentstream.app.data.model.TenantMessage
+import com.rentstream.app.ui.theme.*
+import com.rentstream.app.ui.viewmodel.RentViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
